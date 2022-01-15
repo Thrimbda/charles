@@ -30,7 +30,7 @@ in {
       specialArgs = { inherit lib inputs system; };
       modules = [
         {
-          nixpkgs.pkgs = pkgs;
+          _module.args.pkgs = pkgs;
           networking.hostName = mkDefault (removeSuffix ".nix" (baseNameOf path));
         }
         (filterAttrs (n: v: !elem n [ "system" ]) attrs)
