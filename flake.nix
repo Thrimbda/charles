@@ -45,17 +45,5 @@
 
       darwinConfigurations =
         mapDarwinHosts ./hosts {};
-
-      # darwinConfigurations = { charles = inputs.darwin.lib.darwinSystem {
-      #     inherit system;
-      #     modules = [
-      #       {
-      #         nixpkgs = {inherit pkgs;};
-      #       }
-      #       (import ./darwin-configuration.nix)
-      #     ];
-      #     specialArgs = { inherit lib inputs pkgs system; };
-      #   };
-      # };
   };
 }

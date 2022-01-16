@@ -1,0 +1,13 @@
+let mapleader=" "
+
+set number
+set relativenumber
+set commentary
+set surround
+
+:map <leader>= <Action>(ReformatCode)
+:map <leader>r <Action>(RenameElement)
+:map <leader>g <Action>(Generate)
+:map <leader>u <Action>(FindUsages)
+:map <leader>' <Action>(ActivateTerminalToolWindow)
+:map <leader>o <Action>(OpenFile)

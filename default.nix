@@ -38,7 +38,7 @@ with lib.my;
     };
   # system.configurationRevision = with inputs; mkIf (self ? rev) self.rev;
   system.stateVersion = 4;
-
+  services.nix-daemon.enable = true;
 
   ## Some reasonable, global defaults
   # This is here to appease 'nix flake check' for generic hosts with no

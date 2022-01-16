@@ -1,0 +1,74 @@
+# For emacs:
+*~
+*.*~
+\#*
+.\#*
+
+# For vim:
+*.swp
+.*.sw[a-z]
+*.un~
+.netrwhist
+
+# OS generated files #
+######################
+.DS_Store?
+.DS_Store
+.CFUserTextEncoding
+.Trash
+.Xauthority
+thumbs.db
+Thumbs.db
+Icon?
+
+# Code stuffs #
+###############
+.ccls-cache/
+.sass-cache/
+__pycache__/
+
+# Compiled thangs #
+###################
+*.class
+*.exe
+*.o
+*.pyc
+*.elc
+
+# IntelliJ
+out/
+.idea/
+*.iml
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# VSCODE
+
+.vscode/*
+#!.vscode/settings.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+#!.vscode/extensions.json
+
+## thrimbda
+
+build/
+venv/
+target/
+.pylintrc
+.tags
+.nvimlog
+
+# nix
+.envrc
+shell.nix

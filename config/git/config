@@ -1,0 +1,13 @@
+[user]
+	name = Siyuan Wang
+	email = c.one@thrimbda.com
+[core]
+	whitespace = trailing-space
+[github]
+	user = thrimbda
+[rebase]
+	autosquash = true
+[push]
+	default = current
+[pull]
+	rebase = true
