@@ -10,6 +10,7 @@
       # rust.enableGlobally = true;
       python.enable = true;
       python.enableGlobally = true;
+      postgresql.enable = true;
       # scala.enable = true;
       # java.enable = true;
     };
