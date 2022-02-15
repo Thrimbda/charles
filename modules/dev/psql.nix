@@ -6,7 +6,6 @@ let cfg = config.modules.dev.postgresql;
 in {
   options.modules.dev.postgresql = {
     enable = mkBoolOpt false;
-    enableGlobally = mkBoolOpt false;
   };
 
   config = mkIf cfg.enable {

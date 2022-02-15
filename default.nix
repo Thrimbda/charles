@@ -66,5 +66,6 @@ with lib.my;
     zenith
     htop
     kubectl
+    jq
   ];
 }
