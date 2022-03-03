@@ -26,6 +26,9 @@
       tmux.enable   = true;
       zsh.enable    = true;
     };
+    services = {
+      k8s.enable = true;
+    };
   };
 
   time.timeZone = "Asia/Shanghai";
