@@ -23,8 +23,8 @@ in {
     user.packages = with pkgs; [
       ## Emacs itself
       binutils       # native-comp needs 'as', provided by this
-      # emacsGcc   # 29 + native-comp
-      ((emacsPackagesNgGen emacsGcc).emacsWithPackages (epkgs: [
+      # 29 + pgtk + native-comp
+      ((emacsPackagesFor emacsPgtkGcc).emacsWithPackages (epkgs: [
         epkgs.vterm
       ]))
 
@@ -49,16 +49,11 @@ in {
       editorconfig-core-c # per-project style config
       # :tools lookup & :lang org +roam
       sqlite
-      # :lang javascript
-      nodePackages.typescript-language-server
       # :lang latex & :lang org (latex previews)
       texlive.combined.scheme-medium
       # :lang beancount
       beancount
       unstable.fava  # HACK Momentarily broken on nixos-unstable
-      # :lang rust
-      rustfmt
-      unstable.rust-analyzer
     ];
 
     env.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
@@ -67,17 +62,15 @@ in {
 
     fonts.fonts = [ pkgs.emacs-all-the-icons-fonts ];
 
-    # init.doomEmacs = mkIf cfg.doom.enable ''
-    #   if [ -d $HOME/.config/emacs ]; then
-    #      ${optionalString cfg.doom.fromSSH ''
-    #         git clone git@github.com:hlissner/doom-emacs.git $HOME/.config/emacs
-    #         git clone git@github.com:hlissner/doom-emacs-private.git $HOME/.config/doom
-    #      ''}
-    #      ${optionalString (cfg.doom.fromSSH == false) ''
-    #         git clone https://github.com/hlissner/doom-emacs $HOME/.config/emacs
-    #         git clone https://github.com/hlissner/doom-emacs-private $HOME/.config/doom
-    #      ''}
-    #   fi
-    # '';
+    environment.extraInit = mkIf cfg.doom.enable ''
+      if [ ! -d $HOME/.config/doom ]; then
+         ${optionalString cfg.doom.fromSSH ''
+            git clone git@github.com:Thrimbda/doom-c1.git $HOME/.config/doom
+         ''}
+         ${optionalString (cfg.doom.fromSSH == false) ''
+            git clone https://github.com/Thrimbda/doom-c1 $HOME/.config/doom
+         ''}
+      fi
+    '';
   };
 }

@@ -17,7 +17,5 @@ in {
     user.packages = with pkgs; [
       go
     ];
-
-    env.PATH = [ "${config.user.home}/go/bin" ];
   };
 }

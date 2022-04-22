@@ -38,7 +38,7 @@ with lib.my;
   config = {
     user =
       let user = builtins.getEnv "USER";
-          name = if elem user [ "" "root" ] then "admin" else user;
+          name = if elem user [ "" "root" ] then "thrimbda" else user;
       in {
         inherit name;
         description = "The primary user account";
