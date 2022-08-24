@@ -3,7 +3,7 @@
 with lib;
 with lib.my;
 let sys = "x86_64-linux";
-  darwinSys = "x86_64-darwin";
+  darwinSys = "aarch64-darwin";
 in {
   mkHost = path: attrs @ { system ? sys, ... }:
     nixosSystem {

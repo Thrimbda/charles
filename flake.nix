@@ -18,7 +18,7 @@
   outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, ... }:
     let
       inherit (lib.my) mapModules mapModulesRec mapHosts mapDarwinHosts;
-      system = "x86_64-darwin";
+      system = "aarch64-darwin";
       mkPkgs = pkgs: extraOverlays: import pkgs {
         inherit system;
         config.allowUnfree = true;  # forgive me Stallman senpai

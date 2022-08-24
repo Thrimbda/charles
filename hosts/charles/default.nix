@@ -5,8 +5,7 @@
     dev = {
       go.enable = true;
       node.enable = true;
-      python.enable = true;
-      postgresql.enable = true;
+      # python.enable = true;
     };
     editors = {
       default = "nvim";

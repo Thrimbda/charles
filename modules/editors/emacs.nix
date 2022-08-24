@@ -53,7 +53,7 @@ in {
       texlive.combined.scheme-medium
       # :lang beancount
       beancount
-      unstable.fava  # HACK Momentarily broken on nixos-unstable
+      # unstable.fava  # HACK Momentarily broken on nixos-unstable
     ];
 
     env.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
