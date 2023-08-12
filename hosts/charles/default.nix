@@ -5,11 +5,15 @@
     dev = {
       go.enable = true;
       node.enable = true;
-      # python.enable = true;
+      python.enable = true;
+      java.enable = true;
     };
     editors = {
       default = "nvim";
-      emacs.enable = true;
+      emacs = {
+        enable = true;
+        doom.enable = true;
+      };
       vim.enable = true;
     };
     shell = {

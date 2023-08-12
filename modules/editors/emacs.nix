@@ -11,9 +11,10 @@ let cfg = config.modules.editors.emacs;
 in {
   options.modules.editors.emacs = {
     enable = mkBoolOpt false;
-    doom = {
-      enable  = mkBoolOpt true;
-      fromSSH = mkBoolOpt false;
+    doom = rec {
+      enable  = mkBoolOpt false;
+      repoUrl = mkOpt types.str "https://github.com/hlissner/doom-emacs";
+      configRepoUrl = mkOpt types.str "https://github.com/Thrimbda/doom-c1";
     };
   };
 
@@ -63,13 +64,9 @@ in {
     fonts.fonts = [ pkgs.emacs-all-the-icons-fonts ];
 
     environment.extraInit = mkIf cfg.doom.enable ''
-      if [ ! -d $HOME/.config/doom ]; then
-         ${optionalString cfg.doom.fromSSH ''
-            git clone git@github.com:Thrimbda/doom-c1.git $HOME/.config/doom
-         ''}
-         ${optionalString (cfg.doom.fromSSH == false) ''
-            git clone https://github.com/Thrimbda/doom-c1 $HOME/.config/doom
-         ''}
+      if [ ! -d $XDG_CONFIG_HOME/emacs ]; then
+        git clone --depth=1 --single-branch "${cfg.doom.repoUrl}" "$XDG_CONFIG_HOME/emacs"
+        git clone "${cfg.doom.configRepoUrl}" "$XDG_CONFIG_HOME/doom"
       fi
     '';
   };

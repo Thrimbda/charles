@@ -27,10 +27,10 @@ with lib.my;
         "nixpkgs-overlays=${config.dotfiles.dir}/overlays"
         "dotfiles=${config.dotfiles.dir}"
       ];
-      binaryCaches = [
+      settings.substituters = [
         "https://nix-community.cachix.org"
       ];
-      binaryCachePublicKeys = [
+      settings.trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
       registry = registryInputs // { dotfiles.flake = inputs.self; };
@@ -66,5 +66,6 @@ with lib.my;
     htop
     kubectl
     jq
+    rnix-lsp
   ];
 }

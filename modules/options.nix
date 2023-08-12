@@ -76,8 +76,8 @@ with lib.my;
     users.users.${config.user.name} = mkAliasDefinitions options.user;
 
     nix = let users = [ "root" config.user.name ]; in {
-      trustedUsers = users;
-      allowedUsers = users;
+      settings.trusted-users = users;
+      settings.allowed-users = users;
     };
 
     # must already begin with pre-existing PATH. Also, can't use binDir here,
