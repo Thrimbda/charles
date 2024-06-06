@@ -5,6 +5,7 @@
     dev = {
       go.enable = true;
       node.enable = true;
+      deno.enable = true;
       python.enable = true;
       java.enable = true;
     };
