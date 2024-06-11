@@ -71,4 +71,5 @@ target/
 
 # nix
 .envrc
+.c1-cellar
 shell.nix

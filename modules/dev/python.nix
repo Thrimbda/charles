@@ -19,12 +19,12 @@ in {
   config = mkMerge [
     (mkIf cfg.enable {
       user.packages = with pkgs; [
-        python310
-        python310Packages.pip
-        python310Packages.ipython
-        python310Packages.black
-        python310Packages.setuptools
-        python310Packages.pylint
+        python312
+        python312Packages.pip
+        python312Packages.ipython
+        python312Packages.black
+        python312Packages.setuptools
+        python312Packages.pylint
         poetry
       ];
 

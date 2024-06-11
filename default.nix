@@ -66,6 +66,5 @@ with lib.my;
     htop
     kubectl
     jq
-    rnix-lsp
   ];
 }
