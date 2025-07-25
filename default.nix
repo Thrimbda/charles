@@ -21,7 +21,7 @@ with lib.my;
         nixPathInputs  = mapAttrsToList (n: v: "${n}=${v}") filteredInputs;
         registryInputs = mapAttrs (_: v: { flake = v; }) filteredInputs;
     in {
-      package = pkgs.nixFlakes;
+      package = pkgs.nixVersions.stable;
       extraOptions = "experimental-features = nix-command flakes";
       nixPath = nixPathInputs ++ [
         "nixpkgs-overlays=${config.dotfiles.dir}/overlays"
@@ -38,7 +38,6 @@ with lib.my;
     };
   # system.configurationRevision = with inputs; mkIf (self ? rev) self.rev;
   system.stateVersion = 4;
-  services.nix-daemon.enable = true;
 
   ## Some reasonable, global defaults
   # This is here to appease 'nix flake check' for generic hosts with no

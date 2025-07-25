@@ -16,7 +16,7 @@ in {
   };
 
   config = mkMerge [
-    (let node = pkgs.nodejs-18_x;
+    (let node = pkgs.nodejs_22;
      in mkIf cfg.enable {
       user.packages = [
         node

@@ -37,8 +37,8 @@ in {
       ## Optional dependencies
       fd                  # faster projectile indexing
       imagemagick         # for image-dired
-      (mkIf (config.programs.gnupg.agent.enable)
-        pinentry_emacs)   # in-emacs gnupg prompts
+      # (mkIf (config.programs.gnupg.agent.enable)
+      #   pinentry_emacs)   # in-emacs gnupg prompts
       zstd                # for undo-fu-session/undo-tree compression
 
       ## Module dependencies
@@ -61,7 +61,7 @@ in {
 
     modules.shell.zsh.rcFiles = [ "${configDir}/emacs/aliases.zsh" ];
 
-    fonts.fonts = [ pkgs.emacs-all-the-icons-fonts ];
+    fonts.packages = [ pkgs.emacs-all-the-icons-fonts ];
 
     environment.extraInit = mkIf cfg.doom.enable ''
       if [ ! -d $XDG_CONFIG_HOME/emacs ]; then

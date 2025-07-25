@@ -3,7 +3,7 @@
   ## Modules
   modules = {
     dev = {
-      # go.enable = true;
+      go.enable = true;
       node.enable = true;
       deno.enable = true;
       python.enable = true;
